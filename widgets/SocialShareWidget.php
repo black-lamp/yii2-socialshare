@@ -1,5 +1,5 @@
 <?php
-namespace frontend\components\socialShare\widgets;
+namespace bl\socialShare\widgets;
 
 use yii;
 use yii\base\Widget;
