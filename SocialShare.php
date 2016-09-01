@@ -13,26 +13,37 @@ class SocialShare extends Component
      * Example
      * ```php
      * 'socialShare' => [
-     *       'class' => bl\SocialShare::className(),
+     *       'class' => bl\socialShare\SocialShare::className(),
      *       'networks' => [
      *           'facebook' => [
      *               'class' => bl\socialShare\classes\Facebook::className(),
-     *               'label' => 'Facebook'
+     *               'label' => 'Facebook',
+     *               'attributes' => [
+     *                   'class' => 'social-share'
+     *               ]
      *           ],
      *           'twitter' => [
      *               'class' => bl\socialShare\classes\Twitter::className(),
      *               'label' => 'Twitter',
-     *               'params' => [
-     *                   'account' => 'accountName'
+     *               'account' => 'twitterAccount',
+     *               'attributes' => [
+     *                   'class' => 'social-share'
+     *               ]
+     *           ],
+     *           'googlePlus' => [
+     *               'class' => bl\socialShare\classes\GooglePlus::className(),
+     *               'label' => 'Google+',
+     *               'attributes' => [
+     *                   'class' => 'social-share',
+     *                   'id' => 'google'
      *               ]
      *           ],
      *           'vk' => [
      *               'class' => bl\socialShare\classes\Vkontakte::className(),
-     *               'label' => 'VK'
-     *           ],
-     *           'googlePlus' => [
-     *               'class' => bl\socialShare\classes\GooglePlus::className(),
-     *               'label' => 'Google+'
+     *               'label' => 'vk',
+     *               'attributes' => [
+     *                   'class' => 'social-share'
+     *               ]
      *           ]
      *       ]
      *   ]
