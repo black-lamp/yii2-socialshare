@@ -17,8 +17,7 @@ class GooglePlus extends SocialNetwork
      * @return string
      */
     public function getLink($url, $title, $description, $image) {
-        $this->_link = "https://plusone.google.com/_/+1/confirm?hl=en
-                        &url=$url";
+        $this->_link = "https://plusone.google.com/_/+1/confirm?hl=en&url=$url";
 
         $this->attributes['target'] = '_blank';
         return Html::a($this->label, $this->_link, $this->attributes);

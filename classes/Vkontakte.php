@@ -17,11 +17,7 @@ class Vkontakte extends SocialNetwork
      * @return string
      */
     public function getLink($url, $title, $description, $image) {
-        $this->_link = "http://vk.com/share.php?
-                        url=$url
-                        &title=$title
-                        &description=$description
-                        &image=$image";
+        $this->_link = "http://vk.com/share.php?url=$url&title=$title&description=$description&image=$image";
 
         $this->attributes['target'] = '_blank';
         return Html::a($this->label, $this->_link, $this->attributes);

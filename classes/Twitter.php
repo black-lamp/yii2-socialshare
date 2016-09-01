@@ -19,10 +19,7 @@ class Twitter extends SocialNetwork
      * @return string
      */
     public function getLink($url, $title, $description, $image) {
-        $this->_link = "http://twitter.com/share?
-                        url=$url
-                        &text=$description
-                        &via=$this->account";
+        $this->_link = "http://twitter.com/share?url=$url&text=$description&via=$this->account";
 
         $this->attributes['target'] = '_blank';
         return Html::a($this->label, $this->_link, $this->attributes);
