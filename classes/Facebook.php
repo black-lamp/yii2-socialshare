@@ -1,7 +1,7 @@
 <?php
 namespace bl\socialShare\classes;
 
-use frontend\components\socialShare\base\SocialNetwork;
+use bl\socialShare\base\SocialNetwork;
 use yii\helpers\Html;
 
 /**
