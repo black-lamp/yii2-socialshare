@@ -22,8 +22,8 @@ class Facebook extends SocialNetwork
         $metaTags = [
             ['property' => 'og:url', 'content' => $url],
             ['property' => 'og:type', 'content' => 'website'],
-            ['property' => 'og:description', 'content' => $title],
-            ['property' => 'og:property', 'content' => $description],
+            ['property' => 'og:title', 'content' => $title],
+            ['property' => 'og:description', 'content' => $description],
             ['property' => 'og:image', 'content' => $image],
         ];
         $this->addMetaTags($metaTags);
