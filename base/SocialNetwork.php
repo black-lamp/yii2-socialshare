@@ -20,13 +20,14 @@ abstract class SocialNetwork extends Object
      */
     public $label;
     /**
-     * Attributes for tag <a>
+     * HTML attributes for tag <a>
      * @var array $attributes
      */
     public $attributes = [];
 
     /**
-     * Method for add meta tags to <head> from array
+     * Method for adding meta tags to <head> from array
+     *
      * @param array $metaTags
      */
     protected function addMetaTags($metaTags = []) {
@@ -37,7 +38,8 @@ abstract class SocialNetwork extends Object
 
     /**
      * Method for getting link to the social network
-     * @param string $url Url to yor website
+     *
+     * @param string $url Url to your website
      * @param string $title Title of the page
      * @param string $description Page description
      * @param string $image Link to image

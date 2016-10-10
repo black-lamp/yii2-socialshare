@@ -1,21 +1,27 @@
 Social share widget for Yii2
 ============================
-INSTALATION
------------
-#### Composer require section
-```javascript
+Installation
+------------
+#### Run command
+```
+composer require black-lamp/yii2-socialshare
+```
+or add
+```json
 "black-lamp/yii2-socialshare": "*"
 ```
-### Add SocalShare component to application config
+#### Add 'SocialShare' component to application config
 ```php
 'components' => [
-    ...
+    // ...
     'socialShare' => [
         'class' => bl\socialShare\SocialShare::className(),
         'networks' => [
             'facebook' => [
                 'class' => bl\socialShare\classes\Facebook::className(),
+                // not required
                 'label' => 'Facebook',
+                // html attributes
                 'attributes' => [
                     'class' => 'social-share'
                 ]
@@ -47,13 +53,14 @@ INSTALATION
     ]
 ]
 ```
-USING
+Using
 -----
 ```php
     bl\socialShare\widgets\SocialShareWidget::widget([
-        'url' => 'http://example.com/',
-        'title' => 'Web site title',
-        'description' => 'Web site description...',
-        'image' => 'url to image'
+        'componentId' => 'socialShare', // id of component from config
+        'url' => 'http://example.com/', // url to your web site
+        'title' => 'Page title',
+        'description' => 'Page description...',
+        'image' => 'url/to/image'
     ])
 ```

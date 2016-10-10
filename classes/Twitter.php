@@ -6,6 +6,10 @@ use yii\helpers\Html;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
+ * @property string $_link
+ * @property string $label
+ * @property array $attributes
  */
 class Twitter extends SocialNetwork
 {
@@ -16,7 +20,7 @@ class Twitter extends SocialNetwork
      * @param string $title
      * @param string $description
      * @param string $image
-     * @return string
+     * @return string HTML link tag
      */
     public function getLink($url, $title, $description, $image) {
         $this->_link = "http://twitter.com/share?url=$url&text=$description&via=$this->account";

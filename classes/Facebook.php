@@ -1,11 +1,16 @@
 <?php
 namespace bl\socialShare\classes;
 
-use bl\socialShare\base\SocialNetwork;
 use yii\helpers\Html;
+
+use bl\socialShare\base\SocialNetwork;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
+ * @property string $_link
+ * @property string $label
+ * @property array $attributes
  */
 class Facebook extends SocialNetwork
 {
@@ -14,7 +19,7 @@ class Facebook extends SocialNetwork
      * @param string $title
      * @param string $description
      * @param string $image
-     * @return string
+     * @return string HTML link tag
      */
     public function getLink($url, $title, $description, $image) {
         $this->_link = "http://www.facebook.com/sharer.php?u=$url";
