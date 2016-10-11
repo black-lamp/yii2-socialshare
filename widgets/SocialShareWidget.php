@@ -34,7 +34,8 @@ class SocialShareWidget extends Widget
     /**
      * @inheritdoc
      */
-    public function init() {
+    public function init()
+    {
         $component = $this->componentId;
         $networks = Yii::$app->$component->getNetworks();
 
@@ -46,7 +47,8 @@ class SocialShareWidget extends Widget
                 $this->url,
                 $this->title,
                 $this->description,
-                $this->image
+                $this->image,
+                Yii::$app->$component->getAttributes()
             );
         }
     }
@@ -54,7 +56,8 @@ class SocialShareWidget extends Widget
     /**
      * @inheritdoc
      */
-    public function run() {
+    public function run()
+    {
         parent::run();
         return $this->render('social_buttons', [
             'links' => $this->_links

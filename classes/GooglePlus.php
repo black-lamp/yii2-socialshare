@@ -15,16 +15,19 @@ use bl\socialShare\base\SocialNetwork;
 class GooglePlus extends SocialNetwork
 {
     /**
-     * @param string $url
-     * @param string $title
-     * @param string $description
-     * @param string $image
-     * @return string HTML link tag
+     * @inheritdoc
      */
-    public function getLink($url, $title, $description, $image) {
+    public function getLink($url, $title, $description, $image, $htmlAttrs)
+    {
         $this->_link = "https://plusone.google.com/_/+1/confirm?hl=en&url=$url";
 
         $this->attributes['target'] = '_blank';
+        if(!empty($htmlAttrs)) {
+            foreach ($htmlAttrs as $name => $value) {
+                $this->attributes[$name] = $value;
+            }
+        }
+
         return Html::a($this->label, $this->_link, $this->attributes);
     }
 }

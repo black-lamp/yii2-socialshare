@@ -16,16 +16,19 @@ class Twitter extends SocialNetwork
     public $account;
 
     /**
-     * @param string $url
-     * @param string $title
-     * @param string $description
-     * @param string $image
-     * @return string HTML link tag
+     * @inheritdoc
      */
-    public function getLink($url, $title, $description, $image) {
+    public function getLink($url, $title, $description, $image, $htmlAttrs)
+    {
         $this->_link = "http://twitter.com/share?url=$url&text=$description&via=$this->account";
 
         $this->attributes['target'] = '_blank';
+        if(!empty($htmlAttrs)) {
+            foreach ($htmlAttrs as $name => $value) {
+                $this->attributes[$name] = $value;
+            }
+        }
+
         return Html::a($this->label, $this->_link, $this->attributes);
     }
 }

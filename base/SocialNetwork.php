@@ -4,6 +4,8 @@ namespace bl\socialShare\base;
 use yii;
 use yii\base\Object;
 
+use bl\socialShare\SocialShare;
+
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  */
@@ -43,7 +45,9 @@ abstract class SocialNetwork extends Object
      * @param string $title Title of the page
      * @param string $description Page description
      * @param string $image Link to image
+     * @param array $htmlAttrs HTML  attributes from SocialShare component config
      * @return string Return HTML tag <a>
+     * @see SocialShare
      */
-    abstract public function getLink($url, $title, $description, $image);
+    abstract public function getLink($url, $title, $description, $image, $htmlAttrs);
 }

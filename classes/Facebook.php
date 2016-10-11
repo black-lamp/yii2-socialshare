@@ -15,13 +15,9 @@ use bl\socialShare\base\SocialNetwork;
 class Facebook extends SocialNetwork
 {
     /**
-     * @param string $url
-     * @param string $title
-     * @param string $description
-     * @param string $image
-     * @return string HTML link tag
+     * @inheritdoc
      */
-    public function getLink($url, $title, $description, $image) {
+    public function getLink($url, $title, $description, $image, $htmlAttrs) {
         $this->_link = "http://www.facebook.com/sharer.php?u=$url";
 
         $metaTags = [
@@ -34,6 +30,12 @@ class Facebook extends SocialNetwork
         $this->addMetaTags($metaTags);
 
         $this->attributes['target'] = '_blank';
+        if(!empty($htmlAttrs)) {
+            foreach ($htmlAttrs as $name => $value) {
+                $this->attributes[$name] = $value;
+            }
+        }
+
         return Html::a($this->label, $this->_link, $this->attributes);
     }
 }

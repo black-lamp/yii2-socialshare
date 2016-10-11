@@ -16,14 +16,18 @@ or add
     // ...
     'socialShare' => [
         'class' => bl\socialShare\SocialShare::className(),
+        // HTML attributes for all link, not required parameter
+        'attributes' => [
+            'class' => 'social-btn'
+        ],
         'networks' => [
             'facebook' => [
                 'class' => bl\socialShare\classes\Facebook::className(),
-                // not required
+                /* not required */
                 'label' => 'Facebook',
-                // html attributes
+                // html attributes for link
                 'attributes' => [
-                    'class' => 'social-share'
+                    'class' => 'fb'
                 ]
             ],
             'twitter' => [
@@ -31,7 +35,7 @@ or add
                 'label' => 'Twitter',
                 'account' => 'twitterAccount',
                 'attributes' => [
-                    'class' => 'social-share'
+                    'class' => 'tw'
                 ]
             ],
             'googlePlus' => [
@@ -39,18 +43,19 @@ or add
                 'label' => 'Google+',
                 'attributes' => [
                     'class' => 'social-share',
-                    'id' => 'google'
+                    'id' => 'gp'
                 ]
             ],
             'vk' => [
                 'class' => bl\socialShare\classes\Vkontakte::className(),
                 'label' => 'vk',
                 'attributes' => [
-                    'class' => 'social-share'
+                    'class' => 'vk'
                 ]
-            ]
+            ],
+            // other social networks ...
         ]
-    ]
+    ],
 ]
 ```
 Using

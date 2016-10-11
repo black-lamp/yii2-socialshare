@@ -6,6 +6,9 @@ use yii\base\Component;
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  *
+ * @property array $networks
+ * @property array $attributes
+ *
  * Installation
  * Add this component to application config
  * ```php
@@ -16,7 +19,7 @@ use yii\base\Component;
  *          'networks' => [
  *              'facebook' => [
  *                  'class' => bl\socialShare\classes\Facebook::className(),
- *                  // not required
+ *                  // not required parameters section
  *                  'label' => 'Facebook',
  *                  // html attributes
  *                  'attributes' => [
@@ -33,19 +36,30 @@ use yii\base\Component;
  *              ],
  *              // other social networks ...
  *          ]
- *      ]
+ *      ],
  * ]
  * ```
  */
 class SocialShare extends Component
 {
     public $networks = [];
+    public $attributes = [];
 
     /**
      * Getter for $networks
      * @return array
      */
-    public function getNetworks() {
+    public function getNetworks()
+    {
         return $this->networks;
+    }
+
+    /**
+     * Getter fot attributes
+     * @return array
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
     }
 }

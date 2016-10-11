@@ -15,16 +15,19 @@ use bl\socialShare\base\SocialNetwork;
 class Vkontakte extends SocialNetwork
 {
     /**
-     * @param string $url
-     * @param string $title
-     * @param string $description
-     * @param string $image
-     * @return string HTML link tag
+     * @inheritdoc
      */
-    public function getLink($url, $title, $description, $image) {
+    public function getLink($url, $title, $description, $image, $htmlAttrs)
+    {
         $this->_link = "http://vk.com/share.php?url=$url&title=$title&description=$description&image=$image";
 
         $this->attributes['target'] = '_blank';
+        if(!empty($htmlAttrs)) {
+            foreach ($htmlAttrs as $name => $value) {
+                $this->attributes[$name] = $value;
+            }
+        }
+
         return Html::a($this->label, $this->_link, $this->attributes);
     }
 }
