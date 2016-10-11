@@ -69,3 +69,26 @@ Using
         'image' => 'url/to/image'
     ])
 ```
+What if i want to add a new social network?
+-------------------------------------------
+You must create class and extend it from `bl\socialShare\base\SocialNetwork` abstract class
+```php
+// ...
+class LinckedIn extends bl\socialShare\base\SocialNetwork
+{
+
+}
+```
+and implement the method `getLink()`
+```php
+class LinckedIn extends bl\socialShare\base\SocialNetwork
+{
+    /**
+     * @inheritdoc
+     */
+    public function getLink($url, $title, $description, $image, $htmlAttrs)
+    {
+    }
+}
+```
+this method must return the link to the social network at HTML tag
