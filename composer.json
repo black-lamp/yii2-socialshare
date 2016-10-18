@@ -1,8 +1,13 @@
 {
     "name": "black-lamp/yii2-socialshare",
     "description": "Social share widget for the Yii2 Framework",
-	"keywords": ["yii2", "widget", "social", "share"],
+    "keywords": ["yii2", "widget", "social", "share", "networks"],
     "type": "yii2-extension",
+    "license": "GNU Public License",
+    "support": {
+        "source": "https://github.com/black-lamp/yii2-socialshare",
+        "issues": "https://github.com/black-lamp/yii2-socialshare/issues"
+    },
     "require": {
         "yiisoft/yii2": ">=2.0.4"
     },
@@ -13,8 +18,8 @@
         }
     ],
     "autoload": {
-		"psr-4": {
-			"bl\\socialShare\\": ""
-		}
-	}
+        "psr-4": {
+            "bl\\socialShare\\": ""
+        }
+    }
 }
