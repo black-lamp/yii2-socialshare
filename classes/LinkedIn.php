@@ -1,8 +1,9 @@
 <?php
 namespace bl\socialShare\classes;
 
-use bl\socialShare\base\SocialNetwork;
 use yii\helpers\Html;
+
+use bl\socialShare\base\SocialNetwork;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -11,24 +12,25 @@ use yii\helpers\Html;
  * @property string $label
  * @property array $attributes
  *
- * @property string $account
+ * @property string $siteName
  */
-class Twitter extends SocialNetwork
+class LinkedIn extends SocialNetwork
 {
     /**
-     * @var string Twitter login without `@`
+     * @var string Title of your website
      */
-    public $account;
+    public $siteName;
 
     /**
      * @inheritdoc
      */
     public function getLink($url, $title, $description, $image, $htmlAttrs)
     {
-        $this->_link = "http://twitter.com/share?"
-                        ."url=$url"
-                        ."&text=$description"
-                        ."&via=$this->account";;
+        $this->_link = "https://www.linkedin.com/shareArticle?mini=true"
+                        ."&url=$url"
+                        ."&title=$title"
+                        ."&summary=$description"
+                        ."&source=$this->siteName";
 
         $this->addCustomAttributes($htmlAttrs);
 

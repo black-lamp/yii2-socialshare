@@ -8,14 +8,12 @@ use bl\socialShare\SocialShare;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
+ * @property string $label
+ * @property array $attributes
  */
 abstract class SocialNetwork extends Object
 {
-    /**
-     * Link to the social network
-     * @var string $_link
-     */
-    protected $_link;
     /**
      * Social network link label
      * @var string $label
@@ -26,15 +24,36 @@ abstract class SocialNetwork extends Object
      * @var array $attributes
      */
     public $attributes = [];
+    /**
+     * Link to the social network
+     * @var string $_link
+     */
+    protected $_link;
 
     /**
      * Method for adding meta tags to <head> from array
      *
      * @param array $metaTags
      */
-    protected function addMetaTags($metaTags = []) {
+    protected function addMetaTags($metaTags = [])
+    {
         foreach($metaTags as $tagOptions) {
             Yii::$app->view->registerMetaTag($tagOptions);
+        }
+    }
+
+    /**
+     * Method for adding custom HTML attributes to the social share link
+     *
+     * @param array $htmlAttrs
+     */
+    protected function addCustomAttributes($htmlAttrs)
+    {
+        $this->attributes['target'] = '_blank';
+        if(!empty($htmlAttrs)) {
+            foreach ($htmlAttrs as $name => $value) {
+                $this->attributes[$name] = $value;
+            }
         }
     }
 

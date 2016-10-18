@@ -21,12 +21,7 @@ class GooglePlus extends SocialNetwork
     {
         $this->_link = "https://plusone.google.com/_/+1/confirm?hl=en&url=$url";
 
-        $this->attributes['target'] = '_blank';
-        if(!empty($htmlAttrs)) {
-            foreach ($htmlAttrs as $name => $value) {
-                $this->attributes[$name] = $value;
-            }
-        }
+        $this->addCustomAttributes($htmlAttrs);
 
         return Html::a($this->label, $this->_link, $this->attributes);
     }

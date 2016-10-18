@@ -29,12 +29,7 @@ class Facebook extends SocialNetwork
         ];
         $this->addMetaTags($metaTags);
 
-        $this->attributes['target'] = '_blank';
-        if(!empty($htmlAttrs)) {
-            foreach ($htmlAttrs as $name => $value) {
-                $this->attributes[$name] = $value;
-            }
-        }
+        $this->addCustomAttributes($htmlAttrs);
 
         return Html::a($this->label, $this->_link, $this->attributes);
     }
