@@ -1,5 +1,14 @@
 Social share widget for Yii2
 ============================
+This widget adds links for sharing in social networks.
+
+It supports from the box
+* Facebook
+* Twitter
+* VK
+* Google+
+* LinkedIn
+
 Installation
 ------------
 #### Run command
@@ -10,6 +19,7 @@ or add
 ```json
 "black-lamp/yii2-socialshare": "*"
 ```
+to the require section of your composer.json.
 #### Add 'SocialShare' component to application config
 ```php
 'components' => [
@@ -23,9 +33,9 @@ or add
         'networks' => [
             'facebook' => [
                 'class' => bl\socialShare\classes\Facebook::className(),
-                /* not required */
+                // not required parameter
                 'label' => 'Facebook',
-                // html attributes for link
+                // html attributes for link, not required parameter
                 'attributes' => [
                     'class' => 'fb'
                 ]
@@ -33,6 +43,7 @@ or add
             'twitter' => [
                 'class' => bl\socialShare\classes\Twitter::className(),
                 'label' => 'Twitter',
+                // custom parameter for Twitter class
                 'account' => 'twitterAccount',
                 'attributes' => [
                     'class' => 'tw'
@@ -63,25 +74,25 @@ Using
 ```php
     bl\socialShare\widgets\SocialShareWidget::widget([
         'componentId' => 'socialShare', // id of component from config
-        'url' => 'http://example.com/', // url to your web site
+        'url' => Url::toRoute(['site/index'], true), // url to the page
         'title' => 'Page title',
         'description' => 'Page description...',
-        'image' => 'url/to/image'
+        'image' => Url::toRoute(['/logo.png'], true)
     ])
 ```
 What if i want to add a new social network?
 -------------------------------------------
-You must create class and extend it from `bl\socialShare\base\SocialNetwork` abstract class
+You must create class and extend it from [bl\socialShare\base\SocialNetwork](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php) abstract class
 ```php
 // ...
-class LinckedIn extends bl\socialShare\base\SocialNetwork
+class LinkedIn extends bl\socialShare\base\SocialNetwork
 {
 
 }
 ```
-and implement the method `getLink()`
+and implement the method [getLink()](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php#L71)
 ```php
-class LinckedIn extends bl\socialShare\base\SocialNetwork
+class LinkedIn extends bl\socialShare\base\SocialNetwork
 {
     /**
      * @inheritdoc
