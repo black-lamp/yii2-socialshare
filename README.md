@@ -92,7 +92,7 @@ class LinkedIn extends bl\socialShare\base\SocialNetwork
 
 }
 ```
-and implement the method [getLink()](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php#L71)
+and implement the method [getLink()](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php#L94)
 ```php
 class LinkedIn extends bl\socialShare\base\SocialNetwork
 {
