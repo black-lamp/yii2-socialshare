@@ -1,13 +1,14 @@
 <?php
 namespace bl\socialShare;
 
-use yii\base\Component;
+use yii\base\Object;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  *
  * @property array $networks
  * @property array $attributes
+ * @property boolean $defaultIcons
  *
  * Installation
  * Add this component to application config
@@ -40,10 +41,23 @@ use yii\base\Component;
  * ]
  * ```
  */
-class SocialShare extends Component
+class SocialShare extends Object
 {
+    /**
+     * @var array Configuration social networks classes
+     */
     public $networks = [];
+
+    /**
+     * @var array HTML attributes for all links
+     */
     public $attributes = [];
+
+    /**
+     * @var boolean If set `true` for all links will be used font-icons
+     * instead text labels
+     */
+    public $defaultIcons = false;
 
     /**
      * Getter for $networks

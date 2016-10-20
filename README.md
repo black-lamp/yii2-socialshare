@@ -30,6 +30,8 @@ to the require section of your composer.json.
         'attributes' => [
             'class' => 'social-btn'
         ],
+        // use default font-icons instead text labels
+        'defaultIcons' => true,
         'networks' => [
             'facebook' => [
                 'class' => bl\socialShare\classes\Facebook::className(),
@@ -97,9 +99,24 @@ class LinkedIn extends bl\socialShare\base\SocialNetwork
     /**
      * @inheritdoc
      */
-    public function getLink($url, $title, $description, $image, $htmlAttrs)
+    public function getLink($url, $title, $description, $image, $component)
     {
     }
 }
 ```
-this method must return the link to the social network at HTML tag
+this method must initialize route to the social network 
+and return `initLink()` method with `$component` argument
+```php
+/**
+ * @inheritdoc
+ */
+public function getLink($url, $title, $description, $image, $component)
+{
+    $this->_route = "https://www.linkedin.com/shareArticle?mini=true"
+                    ."&url=$url"
+                    ."&title=$title"
+                    ."&summary=$description";
+                    
+    return $this->initLink($component);
+}
+```

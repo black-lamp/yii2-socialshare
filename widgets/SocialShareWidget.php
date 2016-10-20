@@ -6,6 +6,7 @@ use yii\base\Widget;
 
 use bl\socialShare\SocialShare;
 use bl\socialShare\base\SocialNetwork;
+use bl\socialShare\assets\SocialIconsAsset;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -37,19 +38,23 @@ class SocialShareWidget extends Widget
     public function init()
     {
         $component = $this->componentId;
-        $networks = Yii::$app->$component->getNetworks();
+        $networkClasses = Yii::$app->$component->getNetworks();
 
-        foreach($networks as $network) {
-            /** @var SocialNetwork $networkObj */
-            $networkObj = Yii::createObject($network);
+        foreach($networkClasses as $networkClass) {
+            /** @var SocialNetwork $network */
+            $network = Yii::createObject($networkClass);
 
-            $this->_links[] = $networkObj->getLink(
+            $this->_links[] = $network->getLink(
                 $this->url,
                 $this->title,
                 $this->description,
                 $this->image,
-                Yii::$app->$component->getAttributes()
+                Yii::$app->$component
             );
+        }
+
+        if(Yii::$app->$component->defaultIcons) {
+            SocialIconsAsset::register($this->view);
         }
     }
 
@@ -59,6 +64,7 @@ class SocialShareWidget extends Widget
     public function run()
     {
         parent::run();
+
         return $this->render('social_buttons', [
             'links' => $this->_links
         ]);

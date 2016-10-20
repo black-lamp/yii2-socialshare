@@ -8,7 +8,7 @@ use bl\socialShare\base\SocialNetwork;
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  *
- * @property string $_link
+ * @property string $_route
  * @property string $label
  * @property array $attributes
  */
@@ -17,16 +17,18 @@ class Vkontakte extends SocialNetwork
     /**
      * @inheritdoc
      */
-    public function getLink($url, $title, $description, $image, $htmlAttrs)
+    public function getLink($url, $title, $description, $image, $component)
     {
-        $this->_link = "http://vk.com/share.php?"
+        $this->_route = "http://vk.com/share.php?"
                         ."url=$url"
                         ."&title=$title"
                         ."&description=$description"
                         ."&image=$image";
 
-        $this->addCustomAttributes($htmlAttrs);
+        if($component->defaultIcons) {
+            $this->label = Html::tag('i', '', ['class' => 'si-vk']);
+        }
 
-        return Html::a($this->label, $this->_link, $this->attributes);
+        return $this->initLink($component);
     }
 }
