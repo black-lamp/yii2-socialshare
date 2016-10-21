@@ -19,7 +19,7 @@ class LinkedIn extends SocialNetwork
     /**
      * @var string Title of your website
      */
-    public $siteName;
+    public $siteName = null;
 
     /**
      * @inheritdoc
@@ -29,8 +29,8 @@ class LinkedIn extends SocialNetwork
         $this->_route = "https://www.linkedin.com/shareArticle?mini=true"
                         ."&url=$url"
                         ."&title=$title"
-                        ."&summary=$description"
-                        ."&source=$this->siteName";
+                        ."&summary=$description";
+        $this->_route .= ($this->siteName !== null) ? "&source=$this->siteName" : "";
 
         if($component->defaultIcons) {
             $this->label = Html::tag('i', '', ['class' => 'si-linkedin']);
