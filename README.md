@@ -2,6 +2,9 @@ Social share widget for Yii2
 ============================
 This widget adds links for sharing in social networks.
 
+[![Latest Stable Version](https://poser.pugx.org/black-lamp/yii2-socialshare/v/stable)](https://packagist.org/packages/black-lamp/yii2-socialshare)
+[![License](https://poser.pugx.org/black-lamp/yii2-socialshare/license)](https://packagist.org/packages/black-lamp/yii2-socialshare)
+
 It supports from the box
 * Facebook
 * Twitter
