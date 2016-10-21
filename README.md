@@ -8,6 +8,7 @@ It supports from the box
 * VK
 * Google+
 * LinkedIn
+* Telegram
 
 Installation
 ------------

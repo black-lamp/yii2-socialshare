@@ -4,6 +4,34 @@
     {
       "icon": {
         "paths": [
+          "M512 0c-282.8 0-512 229.2-512 512s229.2 512 512 512 512-229.2 512-512-229.2-512-512-512zM763.6 351l-84 395.8c-5.8 28.2-22.8 34.8-46.4 21.8l-128-94.6-61.4 59.8c-7.2 7-12.8 12.8-25.6 12.8-16.6 0-13.8-6.2-19.4-22l-43.6-143.2-126.6-39.4c-27.4-8.4-27.6-27.2 6.2-40.6l493.2-190.4c22.4-10.2 44.2 5.4 35.6 40z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "telegram",
+          "tg"
+        ],
+        "defaultCode": 60053,
+        "grid": 16
+      },
+      "attrs": [],
+      "properties": {
+        "name": "telegram",
+        "ligatures": "telegram, brand15",
+        "id": 405,
+        "order": 10,
+        "prevSize": 32,
+        "code": 60053
+      },
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 405
+    },
+    {
+      "icon": {
+        "paths": [
           "M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"
         ],
         "width": 950.8560180664062,
@@ -25,9 +53,9 @@
         "prevSize": 32,
         "code": 61593
       },
-      "setIdx": 0,
-      "setId": 2,
-      "iconIdx": 144
+      "setIdx": 2,
+      "setId": 1,
+      "iconIdx": 0
     },
     {
       "icon": {
@@ -53,9 +81,9 @@
         "prevSize": 32,
         "code": 61594
       },
-      "setIdx": 0,
-      "setId": 2,
-      "iconIdx": 145
+      "setIdx": 2,
+      "setId": 1,
+      "iconIdx": 1
     },
     {
       "icon": {
@@ -81,9 +109,9 @@
         "prevSize": 32,
         "code": 61653
       },
-      "setIdx": 0,
-      "setId": 2,
-      "iconIdx": 188
+      "setIdx": 2,
+      "setId": 1,
+      "iconIdx": 2
     },
     {
       "icon": {
@@ -109,9 +137,9 @@
         "prevSize": 32,
         "code": 61665
       },
-      "setIdx": 0,
-      "setId": 2,
-      "iconIdx": 199
+      "setIdx": 2,
+      "setId": 1,
+      "iconIdx": 3
     },
     {
       "icon": {
@@ -137,9 +165,9 @@
         "prevSize": 32,
         "code": 61833
       },
-      "setIdx": 0,
-      "setId": 2,
-      "iconIdx": 355
+      "setIdx": 2,
+      "setId": 1,
+      "iconIdx": 4
     }
   ],
   "height": 1024,
@@ -192,7 +220,7 @@
     "showLiga": true,
     "showGrid": false,
     "quickUsageToken": {
-      "UntitledProject": "MGQ4MjAzYzJhYWFlNTliZjNkYTk1OTUzZTM4NGJkNjQjMSMxNDc2OTU5MjAzIyMj"
+      "UntitledProject1": "NzZlNDI0ODIzNTU5OGNkZTIxZTQ3MDUwZjkzMmEzY2YjMSMxNDc3MDQxMTg0IyMj"
     }
   }
 }
