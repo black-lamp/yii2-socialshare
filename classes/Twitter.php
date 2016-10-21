@@ -16,9 +16,9 @@ use yii\helpers\Html;
 class Twitter extends SocialNetwork
 {
     /**
-     * @var string Twitter login without `@`
+     * @var string Twitter login without `@` symbol
      */
-    public $account;
+    public $account = null;
 
     /**
      * @inheritdoc
@@ -27,8 +27,8 @@ class Twitter extends SocialNetwork
     {
         $this->_route = "http://twitter.com/share?"
                         ."url=$url"
-                        ."&text=$description"
-                        ."&via=$this->account";
+                        ."&text=$description";
+        $this->_route .= ($this->account !== null) ? "&via=$this->account" : "";
 
         if($component->defaultIcons) {
             $this->label = Html::tag('i', '', ['class' => 'si-twitter']);
