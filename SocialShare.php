@@ -16,6 +16,8 @@ use bl\socialShare\widgets\SocialShareWidget;
  * @property array $networks
  * @property array $attributes
  * @property boolean $defaultIcons
+ * @property boolean $enableSeo
+ * @property array $seoAttributes
  *
  * @see SocialShareWidget
  *
@@ -64,6 +66,20 @@ class SocialShare extends Object
     public $defaultIcons = false;
 
     /**
+     * @var boolean If set `true` for all links will be appended
+     * SEO attributes from $seoAttributes array
+     */
+    public $enableSeo = true;
+
+    /**
+     * @var array of SEO attributes for link
+     */
+    public $seoAttributes = [
+        'target' => '_blank',
+        'rel' => 'nofollow'
+    ];
+
+    /**
      * Getter for $networks
      * @return array
      */
@@ -73,11 +89,20 @@ class SocialShare extends Object
     }
 
     /**
-     * Getter fot attributes
+     * Getter for $attributes
      * @return array
      */
     public function getAttributes()
     {
         return $this->attributes;
+    }
+
+    /**
+     * Getter for $seoAttributes
+     * @return array
+     */
+    public function getSeoAttributes()
+    {
+        return $this->seoAttributes;
     }
 }
