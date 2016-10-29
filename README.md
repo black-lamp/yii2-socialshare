@@ -13,6 +13,7 @@ It supports from the box
 * Google+
 * LinkedIn
 * Telegram
+* Pinterest
 
 Installation
 ------------
