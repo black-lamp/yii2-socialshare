@@ -3,37 +3,41 @@ namespace bl\socialShare;
 
 use yii\base\Object;
 
+use bl\socialShare\widgets\SocialShareWidget;
+
 /**
+ * Component for configuration of social network classes
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
+ * @link https://github.com/black-lamp/yii2-socialshare
+ * @license https://opensource.org/licenses/GPL-3.0 GNU Public License
  *
  * @property array $networks
  * @property array $attributes
  * @property boolean $defaultIcons
  *
- * Installation
- * Add this component to application config
+ * @see SocialShareWidget
+ *
+ * Example
  * ```php
  * 'components' => [
  *      // ...
  *      'socialShare' => [
  *          'class' => bl\socialShare\SocialShare::className(),
+ *          'attributes' => [
+ *              'class' => 'social-btn' // html class
+ *          ],
  *          'networks' => [
  *              'facebook' => [
  *                  'class' => bl\socialShare\classes\Facebook::className(),
- *                  // not required parameters section
- *                  'label' => 'Facebook',
- *                  // html attributes
- *                  'attributes' => [
- *                      'class' => 'social-btn' // html class
- *                  ]
+ *                  'label' => 'Facebook'
  *              ],
  *              'twitter' => [
  *                  'class' => bl\socialShare\classes\Twitter::className(),
  *                  'label' => 'Twitter',
- *                  'account' => 'username',
- *                  'attributes' => [
- *                      'class' => 'social-btn'
- *                  ]
+ *                  // custom option for Twitter class
+ *                  'account' => 'username'
  *              ],
  *              // other social networks ...
  *          ]

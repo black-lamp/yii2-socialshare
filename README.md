@@ -1,8 +1,9 @@
 Social share widget for Yii2
 ============================
-This widget adds share links fro social networks.
+This widget adds share links for social networks.
 
 [![Latest Stable Version](https://poser.pugx.org/black-lamp/yii2-socialshare/v/stable)](https://packagist.org/packages/black-lamp/yii2-socialshare)
+[![Latest Unstable Version](https://poser.pugx.org/black-lamp/yii2-socialshare/v/unstable)](https://packagist.org/packages/black-lamp/yii2-socialshare)
 [![License](https://poser.pugx.org/black-lamp/yii2-socialshare/license)](https://packagist.org/packages/black-lamp/yii2-socialshare)
 
 It supports from the box
@@ -30,41 +31,28 @@ to the require section of your composer.json.
     // ...
     'socialShare' => [
         'class' => bl\socialShare\SocialShare::className(),
+        'defaultIcons' => true,
         'attributes' => [
             'class' => 'social-btn'
         ],
-        'defaultIcons' => true,
         'networks' => [
             'facebook' => [
                 'class' => bl\socialShare\classes\Facebook::className(),
-                'label' => 'Facebook',
-                'attributes' => [
-                    'class' => 'fb'
-                ]
+                'label' => 'Facebook'
             ],
             'twitter' => [
                 'class' => bl\socialShare\classes\Twitter::className(),
                 'label' => 'Twitter',
-                // custom parameter for Twitter class
-                'account' => 'twitterAccount',
-                'attributes' => [
-                    'class' => 'tw'
-                ]
+                // custom option for Twitter class
+                'account' => 'twitterAccount'
             ],
             'googlePlus' => [
                 'class' => bl\socialShare\classes\GooglePlus::className(),
-                'label' => 'Google+',
-                'attributes' => [
-                    'class' => 'social-share',
-                    'id' => 'gp'
-                ]
+                'label' => 'Google+'
             ],
             'vk' => [
                 'class' => bl\socialShare\classes\Vkontakte::className(),
-                'label' => 'vk',
-                'attributes' => [
-                    'class' => 'vk'
-                ]
+                'label' => 'vk'
             ],
             // other social networks ...
         ]
@@ -73,49 +61,50 @@ to the require section of your composer.json.
 ```
 
 In this component you need to add and configure social network classes
-#### Component configuration attributes
+#### Component configuration properties
 
-| Name | Data type | Value | Default value | Required |
-|---|---|---|---|---|
-|class|string|Namespace of 'SocialShare' component|-|yes|
-|networks|array|Array of social networks classes configuration|-|yes|
-|attributes|array|HTML attributes for all share links|-|no|
-|defaultIcons|boolean|Use default font-icons instead text labels or not|false|no|
-
-#### Social network class configuration attributes
-| Name | Data type | Value | Required |
+| Option | Type | Default | Description |
 |---|---|---|---|
-|class|string|Namespace of social network class|yes|
-|label|string|Text for link|no|
-|attributes|array|HTML attributes for share link|no|
+|networks|array|-|Array of social networks classes configuration|
+|attributes|array|-|HTML attributes for all share links|
+|defaultIcons|boolean|false|Use default font-icons instead text labels or not|
+
+#### Social network class configuration properties
+| Option | Type | Default |
+|---|---|---|
+|class|string|Namespace of social network class|
+|label|string|Text for link|
+|attributes|array|HTML attributes for share link|
+
 Using
 -----
 You should use the widget for adding the share links on page
 ```php
-    bl\socialShare\widgets\SocialShareWidget::widget([
+    <?= \bl\socialShare\widgets\SocialShareWidget::widget([
         'componentId' => 'socialShare',
         'url' => Url::toRoute(['site/index'], true),
         'title' => 'Black Lamp - digital agancy',
         'description' => 'Black Lamp provides a comprehensive range of services for development...',
         'image' => Url::toRoute(['/logo.png'], true)
-    ])
+    ]) ?>
 ```
 
-#### Widget configuration attributes
-| Name | Value |
-|---|---|
-|componentId|id of component from config|
-|url|Absolute URL to the page|
-|title|Page title|
-|description|Page description|
-|image|Absolute URL to the image|
+#### Widget configuration properties
+| Name | Type | Description |
+|---|---|---|
+|componentId|string|id of SocialShare component from config|
+|url|string|Absolute URL to the page|
+|title|string|Page title|
+|description|string|Page description|
+|image|string|Absolute URL to the image for page|
 
 What if i want to add a new social network?
 -------------------------------------------
 You must create class and extend it from [bl\socialShare\base\SocialNetwork](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php) abstract class
 ```php
-// ...
-class LinkedIn extends bl\socialShare\base\SocialNetwork
+use bl\socialShare\base\SocialNetwork;
+
+class LinkedIn extends SocialNetwork
 {
 
 }

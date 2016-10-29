@@ -7,6 +7,8 @@
  */
 ?>
 
-<?php foreach($links as $link): ?>
-    <?= $link ?>
-<?php endforeach; ?>
+<div class="social-networks">
+    <?php foreach($links as $link): ?>
+        <?= $link ?>
+    <?php endforeach; ?>
+</div>
