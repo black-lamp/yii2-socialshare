@@ -44,21 +44,6 @@ abstract class SocialNetwork extends Object
     }
 
     /**
-     * Method for adding custom HTML attributes to the social share link
-     *
-     * @param array $htmlAttrs
-     */
-    protected function addCustomAttributes($htmlAttrs)
-    {
-        $this->attributes['target'] = '_blank';
-        if(!empty($htmlAttrs)) {
-            foreach ($htmlAttrs as $name => $value) {
-                $this->attributes[$name] = $value;
-            }
-        }
-    }
-
-    /**
      * Method for initialize link to the social network
      *
      * @param SocialShare $component
@@ -67,8 +52,13 @@ abstract class SocialNetwork extends Object
     protected function initLink($component = null)
     {
         if($component !== null && $this->_route !== null) {
-            $this->attributes['target'] = '_blank';
+            // init seo attributes
+            $seoAttributes = $component->getSeoAttributes();
+            if($component->enableSeo && !empty($seoAttributes)) {
+                $this->attributes = array_merge($this->attributes, $seoAttributes);
+            }
 
+            // init global and custom attributes
             $attributes = $component->getAttributes();
             if(!empty($attributes)) {
                 foreach ($attributes as $name => $value) {

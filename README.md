@@ -69,6 +69,8 @@ In this component you need to add and configure social network classes
 |networks|array|-|Array of social networks classes configuration|
 |attributes|array|-|HTML attributes for all share links|
 |defaultIcons|boolean|false|Use default font-icons instead text labels or not|
+|enableSeo|boolean|true|Enable or disable appending SEO attributes from `seoAttributes` array for links|
+|seoAttributes|array|['target' => '_blank', 'rel' => 'nofollow']|Array of SEO attributes for links|
 
 #### Social network class configuration properties
 | Option | Type | Default |
@@ -110,7 +112,7 @@ class LinkedIn extends SocialNetwork
 
 }
 ```
-and implement the method [getLink()](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php#L94)
+and implement the method [getLink()](https://github.com/black-lamp/yii2-socialshare/blob/master/base/SocialNetwork.php#L84)
 ```php
 class LinkedIn extends bl\socialShare\base\SocialNetwork
 {
