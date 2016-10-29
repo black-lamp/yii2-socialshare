@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'social-icons';
   src:
-    url('../fonts/social-icons.ttf?i1ur5r') format('truetype'),
-    url('../fonts/social-icons.woff?i1ur5r') format('woff'),
-    url('../fonts/social-icons.svg?i1ur5r#social-icons') format('svg');
+    url('../fonts/social-icons.ttf?qkjgqj') format('truetype'),
+    url('../fonts/social-icons.woff?qkjgqj') format('woff'),
+    url('../fonts/social-icons.svg?qkjgqj#social-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-i, .icomoon-liga {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'social-icons' !important;
   speak: none;
@@ -17,22 +17,15 @@ i, .icomoon-liga {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.si-telegram:before {
+  content: "\f1d8";
+}
 .si-pinterest:before {
   content: "\f231";
 }
@@ -50,8 +43,5 @@ i, .icomoon-liga {
 }
 .si-vk:before {
   content: "\f189";
-}
-.si-telegram:before {
-  content: "\ea95";
 }
 
