@@ -140,3 +140,7 @@ public function getLink($url, $title, $description, $image, $component)
     return $this->initLink($component);
 }
 ```
+
+Other extensions
+----------------
+[yii2-social-networks](https://github.com/black-lamp/yii2-social-networks) - this widget adds links to social networks
