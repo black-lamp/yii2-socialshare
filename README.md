@@ -7,13 +7,14 @@ This widget adds share links for social networks.
 [![License](https://poser.pugx.org/black-lamp/yii2-socialshare/license)](https://packagist.org/packages/black-lamp/yii2-socialshare)
 
 It supports from the box
+* VK
 * Facebook
 * Twitter
-* VK
 * Google+
 * LinkedIn
-* Telegram
 * Pinterest
+* Telegram
+* Gmail
 
 Installation
 ------------
