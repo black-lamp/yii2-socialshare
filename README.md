@@ -15,6 +15,7 @@ It supports from the box
 * Pinterest
 * Telegram
 * Viber
+* WhatsApp
 * Gmail
 
 Installation

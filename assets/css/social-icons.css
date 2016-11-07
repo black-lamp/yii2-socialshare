@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'social-icons';
   src:
-          url('../fonts/social-icons.ttf?mj1sgv') format('truetype'),
-          url('../fonts/social-icons.woff?mj1sgv') format('woff'),
-          url('../fonts/social-icons.svg?mj1sgv#social-icons') format('svg');
+          url('../fonts/social-icons.ttf?p3676z') format('truetype'),
+          url('../fonts/social-icons.woff?p3676z') format('woff'),
+          url('../fonts/social-icons.svg?p3676z#social-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-i {
+i, .icomoon-liga {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'social-icons' !important;
   speak: none;
@@ -18,6 +18,16 @@ i {
   text-transform: none;
   line-height: 1;
 
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,6 +35,9 @@ i {
 
 .si-viber:before {
   content: "\e900";
+}
+.si-whatsapp:before {
+  content: "\ea93";
 }
 .si-mail:before {
   content: "\f0e0";
