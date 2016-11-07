@@ -11,9 +11,16 @@ use bl\socialShare\base\SocialNetwork;
  * @property string $_route
  * @property string $label
  * @property array $attributes
+ *
+ * @property string $color
  */
 class Facebook extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#3b5998";
+
     /**
      * @inheritdoc
      */

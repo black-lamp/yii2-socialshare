@@ -13,9 +13,15 @@ use bl\socialShare\base\SocialNetwork;
  * @property array $attributes
  *
  * @property string $bodyPattern
+ * @property string $color
  */
 class Gmail extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#da4336";
+
     /**
      * @var string pattern for body of mail
      * You should use next variables from widget config: $url, $title, $description, $image

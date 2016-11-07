@@ -12,9 +12,15 @@ use yii\helpers\Html;
  * @property array $attributes
  *
  * @property string $account
+ * @property string $color
  */
 class Twitter extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#1da1f2";
+
     /**
      * @var string Twitter login without `@` symbol
      */

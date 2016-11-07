@@ -13,9 +13,15 @@ use bl\socialShare\base\SocialNetwork;
  * @property array $attributes
  *
  * @property string $siteName
+ * @property string $color
  */
 class LinkedIn extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#287bbc";
+
     /**
      * @var string Title of your website
      */

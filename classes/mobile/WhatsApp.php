@@ -6,10 +6,24 @@ use yii\helpers\Html;
 use bl\socialShare\base\SocialNetwork;
 
 /**
+ * Class for WhatsApp
+ * This link work only with mobile devices
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
+ * @property string $_route
+ * @property string $label
+ * @property array $attributes
+ *
+ * @property string $color
  */
 class WhatsApp extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#00e676";
+
     /**
      * @inheritdoc
      */

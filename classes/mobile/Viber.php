@@ -14,9 +14,16 @@ use bl\socialShare\base\SocialNetwork;
  * @property string $_route
  * @property string $label
  * @property array $attributes
+ *
+ * @property string $color
  */
 class Viber extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#7b519d";
+
     /**
      * @inheritdoc
      */

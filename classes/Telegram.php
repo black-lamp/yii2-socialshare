@@ -12,9 +12,15 @@ use yii\helpers\Html;
  * @property array $attributes
  *
  * @property string $message
+ * @property string $color
  */
 class Telegram extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#179cde";
+
     /**
      * @var string adding message for share link
      */

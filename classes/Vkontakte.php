@@ -11,9 +11,16 @@ use bl\socialShare\base\SocialNetwork;
  * @property string $_route
  * @property string $label
  * @property array $attributes
+ *
+ * @property array $color
  */
 class Vkontakte extends SocialNetwork
 {
+    /**
+     * @var string official color
+     */
+    static public $color = "#507299";
+
     /**
      * @inheritdoc
      */
