@@ -1,8 +1,9 @@
 <?php
 namespace bl\socialShare\classes;
 
-use bl\socialShare\base\SocialNetwork;
 use yii\helpers\Html;
+
+use bl\socialShare\base\SocialNetwork;
 
 /**
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -11,7 +12,7 @@ use yii\helpers\Html;
  * @property string $label
  * @property array $attributes
  *
- * @property array $bodyPattern
+ * @property string $bodyPattern
  */
 class Gmail extends SocialNetwork
 {

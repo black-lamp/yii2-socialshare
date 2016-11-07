@@ -14,6 +14,7 @@ It supports from the box
 * LinkedIn
 * Pinterest
 * Telegram
+* Viber
 * Gmail
 
 Installation
