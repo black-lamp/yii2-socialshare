@@ -67,20 +67,20 @@ to the require section of your composer.json.
 In this component you need to add and configure social network classes
 #### Component configuration properties
 
-| Option | Type | Default | Description |
+| Option | Description | Type | Default |
 |---|---|---|---|
-|networks|array|-|Array of social networks classes configuration|
-|attributes|array|-|HTML attributes for all share links|
-|defaultIcons|boolean|false|Use default font-icons instead text labels or not|
-|enableSeo|boolean|true|Enable or disable appending SEO attributes from `seoAttributes` array for links|
-|seoAttributes|array|['target' => '_blank', 'rel' => 'nofollow']|Array of SEO attributes for links|
+|networks|Array of social networks classes configuration|array|-|
+|attributes|HTML attributes for all share links|array|-|
+|defaultIcons|Use default font-icons instead text labels or not|boolean|false|
+|enableSeo|Enable or disable appending SEO attributes from `seoAttributes` array for links|boolean|true|
+|seoAttributes|Array of SEO attributes for links|array|['target' => '_blank', 'rel' => 'nofollow']|
 
 #### Social network class configuration properties
-| Option | Type | Default |
+| Option | Description | Type |
 |---|---|---|
-|class|string|Namespace of social network class|
-|label|string|Text for link|
-|attributes|array|HTML attributes for share link|
+|class|Namespace of social network class|string|
+|label|Text for link|string|
+|attributes|HTML attributes for share link|array|
 
 Using
 -----
@@ -96,13 +96,13 @@ You should use the widget for adding the share links on page
 ```
 
 #### Widget configuration properties
-| Name | Type | Description |
+| Option | Description | Type |
 |---|---|---|
-|componentId|string|id of SocialShare component from config|
-|url|string|Absolute URL to the page|
-|title|string|Page title|
-|description|string|Page description|
-|image|string|Absolute URL to the image for page|
+|componentId|id of SocialShare component from config|string|
+|url|Absolute URL to the page|string|
+|title|Page title|string|
+|description|Page description|string|
+|image|Absolute URL to the image for page|string|
 
 What if i want to add a new social network?
 -------------------------------------------
