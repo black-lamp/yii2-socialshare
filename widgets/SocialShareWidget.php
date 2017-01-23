@@ -100,10 +100,10 @@ class SocialShareWidget extends Widget
             }
 
             $this->_links[] = $network->getLink(
-                $linkParams['url'],
-                $linkParams['title'],
-                $linkParams['description'],
-                $linkParams['image'],
+                urlencode($linkParams['url']),
+                urlencode($linkParams['title']),
+                urlencode($linkParams['description']),
+                urlencode($linkParams['image']),
                 $socialShare
             );
         }
