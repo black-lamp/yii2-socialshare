@@ -103,6 +103,7 @@ You should use the widget for adding the share links on page
 |title|Page title|string|
 |description|Page description|string|
 |image|Absolute URL to the image for page|string|
+|exceptions|Exceptions for social networks. In this array you can override default title, description, link or image.|array|
 
 What if i want to add a new social network?
 -------------------------------------------

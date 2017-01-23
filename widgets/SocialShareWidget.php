@@ -3,6 +3,7 @@ namespace bl\socialShare\widgets;
 
 use yii;
 use yii\base\Widget;
+use yii\helpers\ArrayHelper;
 
 use bl\socialShare\SocialShare;
 use bl\socialShare\base\SocialNetwork;
@@ -52,6 +53,20 @@ class SocialShareWidget extends Widget
     public $image;
 
     /**
+     * @var array Exceptions for social networks
+     * Example
+     * ```php
+     * 'exceptions' => [
+     *      \bl\socialShare\classes\Gmail::class => [
+     *          'title' => 'Title for gmail',
+     *          'description' => 'Description for gmail'
+     *      ]
+     * ]
+     * ```
+     */
+    public $exceptions = [];
+
+    /**
      * @var array
      */
     protected $_links = [];
@@ -71,11 +86,24 @@ class SocialShareWidget extends Widget
             /** @var SocialNetwork $network */
             $network = Yii::createObject($networkClass);
 
+            $linkParams = [
+                'url' => $this->url,
+                'title' => $this->title,
+                'description' => $this->description,
+                'image' => $this->image
+            ];
+
+            if ($params = ArrayHelper::getValue($this->exceptions, $networkClass['class'])) {
+                foreach ($params as $name => $value) {
+                    $linkParams[$name] = $value;
+                }
+            }
+
             $this->_links[] = $network->getLink(
-                $this->url,
-                $this->title,
-                $this->description,
-                $this->image,
+                $linkParams['url'],
+                $linkParams['title'],
+                $linkParams['description'],
+                $linkParams['image'],
                 $socialShare
             );
         }
