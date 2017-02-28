@@ -9,8 +9,7 @@
 }
 
 i, .icomoon-liga {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'social-icons' !important;
+  font-family: 'social-icons';
   speak: none;
   font-style: normal;
   font-weight: normal;
